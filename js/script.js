@@ -4,7 +4,7 @@
  * Use o formato internacional, somente números.
  * Exemplo: 5585999999999
  */
-const WHATSAPP_NUMBER = "85992728273";
+const WHATSAPP_NUMBER = "5585992738273";
 
 const WHATSAPP_MESSAGE =
   "Olá! Gostaria de saber mais sobre o acompanhamento psicológico.";
