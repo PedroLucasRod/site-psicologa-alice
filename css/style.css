@@ -107,10 +107,14 @@ button {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(250, 248, 244, 0.94);
-  border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(14px);
+  z-index: 110;
+
+  height: var(--header-height);
+
+  background: var(--coffee);
+  color: var(--off-white);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .nav-wrap {
@@ -126,6 +130,7 @@ button {
   font-weight: 700;
   letter-spacing: -0.04em;
   font-size: 1.35rem;
+  color: var(--off-white);
 }
 
 .primary-nav {
@@ -159,18 +164,37 @@ button {
 
 .menu-toggle {
   display: none;
+
+  width: 58px;
+  height: 58px;
+
+  padding: 0;
   border: 0;
+  border-radius: 12px;
+
   background: transparent;
-  padding: 10px;
+  color: var(--off-white);
+
   cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-toggle span {
   display: block;
-  width: 23px;
-  height: 1.5px;
+
+  width: 32px;
+  height: 3px;
+
   margin: 5px 0;
-  background: var(--black);
+
+  background: currentColor;
+  border-radius: 999px;
+
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
 }
 
 .hero {
@@ -806,38 +830,120 @@ p {
 
 @media (max-width: 849px) {
   .menu-toggle {
-    display: block;
+    display: flex;
     position: relative;
-    z-index: 61;
+    z-index: 120;
+    flex-direction: column;
   }
 
+  /* Menu mobile */
   .primary-nav {
     position: fixed;
-    inset: 72px 0 0;
-    z-index: 60;
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    z-index: 110;
+
     display: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 28px 20px;
-    background: var(--off-white);
-    border-top: 1px solid var(--border);
+
+    /*
+    * Não usamos bottom: 0.
+    * Assim o menu ocupa somente o espaço dos links.
+    */
+    height: auto;
+    max-height: none;
+
+    padding: 10px 24px 14px;
+
+    /*
+    * Café com leite translúcido.
+    * A página continua aparecendo atrás.
+    */
+    background: rgba(232, 221, 208, 0.94);
+
+    /*
+    * Dá aquele efeito moderno de vidro/camada.
+    */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: 1px solid rgba(77, 57, 47, 0.14);
+
+    box-shadow:
+      0 16px 35px rgba(28, 28, 26, 0.14);
+
+    /*
+    * O menu aparece sobre a página,
+    * mas não cria uma segunda página.
+    */
+    overflow: visible;
   }
 
   .primary-nav.open {
     display: flex;
   }
 
+  /* Links do menu */
   .primary-nav a {
-    padding: 18px 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+
+    min-height: 56px;
+    padding: 16px 0;
+
+    border-bottom: 1px solid rgba(77, 57, 47, 0.15);
+
+    color: var(--coffee-dark);
+
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      padding-left 180ms ease;
   }
 
+  .primary-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  /*
+  * Hover/toque sem deslocar o texto.
+  */
+  .primary-nav a:hover {
+    color: var(--coffee);
+  }
+
+  /*
+  * Item ativo.
+  *
+  * IMPORTANTE:
+  * Não usamos padding-left diferente aqui.
+  * Isso evita o Burnout ficar deslocado para a direita.
+  */
+  .primary-nav a.active {
+    color: var(--coffee-dark);
+    padding-left: 12px;
+
+    background: rgba(111, 85, 69, 0.08);
+    border-radius: 8px;
+  }
+
+  /*
+  * Remove aquela linha que existia no desktop.
+  */
   .primary-nav a.active::after {
     display: none;
   }
-
   .topics {
     grid-template-columns: 1fr;
     gap: 30px;
