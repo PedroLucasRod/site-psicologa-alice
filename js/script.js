@@ -350,6 +350,85 @@ function setupTestimonials() {
   show(0);
 }
 
+/* =========================================================
+   FAQ
+========================================================= */
+
+function setupFAQ() {
+
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  if (!faqItems.length) {
+    return;
+  }
+
+  faqItems.forEach((item) => {
+
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+
+    if (!question || !answer) {
+      return;
+    }
+
+    question.addEventListener("click", () => {
+
+      const isOpen =
+        question.getAttribute("aria-expanded") === "true";
+
+
+      faqItems.forEach((otherItem) => {
+
+        const otherQuestion =
+          otherItem.querySelector(".faq-question");
+
+        const otherAnswer =
+          otherItem.querySelector(".faq-answer");
+
+        const otherIcon =
+          otherItem.querySelector(".faq-icon");
+
+        if (!otherQuestion || !otherAnswer) {
+          return;
+        }
+
+        otherQuestion.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        otherAnswer.hidden = true;
+
+        if (otherIcon) {
+          otherIcon.textContent = "+";
+        }
+
+      });
+
+
+      if (!isOpen) {
+
+        question.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+        answer.hidden = false;
+
+        const icon =
+          item.querySelector(".faq-icon");
+
+        if (icon) {
+          icon.textContent = "−";
+        }
+
+      }
+
+    });
+
+  });
+
+}
 
 /* =========================================================
    ANIMAÇÕES DE ENTRADA
@@ -400,6 +479,7 @@ function setupRevealObserver() {
 }
 
 
+
 /* =========================================================
    INICIALIZAÇÃO
 ========================================================= */
@@ -408,4 +488,5 @@ setupWhatsApp();
 setupMobileMenu();
 setupTopics();
 setupTestimonials();
+setupFAQ();
 setupRevealObserver();
