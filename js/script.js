@@ -5,7 +5,7 @@
 const WHATSAPP_NUMBER = "5585992738273";
 
 const WHATSAPP_MESSAGE =
-  "Olá! Gostaria de saber mais sobre o acompanhamento psicológico.";
+  "Oii Alice! Vim pelo site e gostaria de agendar uma sessão contigo";
 
 
 /* =========================================================
