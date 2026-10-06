@@ -1108,6 +1108,166 @@ p {
   color: var(--gray);
 }
 
+/* =========================================================
+   SERVIÇOS
+========================================================= */
+
+.services-section {
+  position: relative;
+  background: var(--beige);
+}
+
+.services-list {
+  position: relative;
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding-left: 90px;
+}
+
+/* Linha que conecta os círculos */
+
+.services-list::before {
+  content: "";
+  position: absolute;
+  left: 36px;
+  top: 36px;
+  bottom: 36px;
+  width: 1px;
+  background: rgba(111, 85, 69, 0.28);
+}
+
+
+/* Cada serviço */
+
+.service-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 0 58px;
+}
+
+.service-item:last-child {
+  padding-bottom: 0;
+}
+
+
+/* Círculo */
+
+.service-number {
+  position: absolute;
+  left: -90px;
+  top: 0;
+
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--coffee);
+  border-radius: 50%;
+
+  background: var(--beige);
+  color: var(--coffee-dark);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+
+  z-index: 2;
+
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+
+/* Conteúdo */
+
+.service-content {
+  max-width: 700px;
+  padding-top: 5px;
+}
+
+.service-content h3 {
+  margin: 0 0 12px;
+
+  color: var(--coffee-dark);
+
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.service-content p {
+  max-width: 680px;
+  margin: 0;
+
+  color: var(--gray);
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* Interação */
+
+.service-item:hover .service-number {
+  background: var(--coffee);
+  color: var(--off-white);
+  transform: scale(1.06);
+  box-shadow: 0 10px 25px rgba(77, 57, 47, 0.14);
+}
+
+
+/* =========================================================
+   SERVIÇOS — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .services-list {
+    margin-top: 45px;
+    padding-left: 62px;
+  }
+
+  .services-list::before {
+    left: 25px;
+    top: 30px;
+    bottom: 30px;
+  }
+
+  .service-item {
+    padding-bottom: 48px;
+  }
+
+  .service-number {
+    left: -62px;
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 1.2rem;
+  }
+
+  .service-content {
+    padding-top: 2px;
+  }
+
+  .service-content h3 {
+    font-size: 1.08rem;
+    margin-bottom: 8px;
+  }
+
+  .service-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
 .site-footer {
   padding: 42px 0;
   background: var(--black);

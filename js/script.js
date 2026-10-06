@@ -276,17 +276,17 @@ function setupTestimonials() {
   const testimonials = [
     {
       text:
-        "Não sou a mesma pessoa de antes e, na verdade, nem quero ser. Hoje tenho mais percepção dos meus limites, do que diz respeito à minha saúde e de que o trabalho é apenas uma das partes importantes da minha existência."
+        "Eu não tinha ideia que minha vida tava sem cor até que tudo mudou. Eu achava que era normal, mas depois vi que tava vivendo anestesiada. Eu pude construir minha vida de novo e aprender a colocar em prática o que me fazia bem."
     },
 
     {
       text:
-        "Foi difícil, mas ao mesmo tempo foi a virada de chave pra encontrar minha identidade, uma versão de mim que eu nem sabia que existia."
+        "Quando a depressão foi embora eu me senti eu mesma de novo. Não acredito que eu quase deixei minha vida passar vivendo como antes. Eu voltei a sorrir, voltei a sair, voltei a ver minha família, voltei a ter objetivos e sonhos, voltei a finalmente viver."
     },
 
     {
       text:
-        "Achei que nunca mais iria voltar a viver com leveza. Minha vida voltou a ter sentido e prazer. Demorei muito tempo pra agir, mas foi a melhor decisão que tomei."
+        "Eu tinha perdido totalmente o prazer, a iniciativa e não tinha esperança que um dia voltaria a sentir alegria de novo. Com pequenos passos eu fui recuperando o controle da minha vida e entendendo que eu poderia agir mesmo antes de sentir vontade. Tudo mudou pra melhor."
     }
   ];
 
